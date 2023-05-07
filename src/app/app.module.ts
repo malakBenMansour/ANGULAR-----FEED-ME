@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './front/header/header.component';
@@ -20,18 +20,24 @@ import {FacebookLoginProvider, SocialLoginModule, SocialAuthServiceConfig, Socia
 import { DashboardComponent } from './back/dashboard/dashboard.component';
 import { NavbaradminComponent } from './back/navbaradmin/navbaradmin.component';
 import { TestComponent } from './back/test/test.component';
+import { ReclamationsComponent } from './back/reclamations/reclamations.component';
+import { TypereclamationsComponent } from './back/typereclamations/typereclamations.component';
+import { AddReclamationComponent } from './front/reclamation/add-reclamation/add-reclamation.component';
+import { AddtypeReclamationComponent } from './front/typereclamation/addtype-reclamation/addtype-reclamation.component';
+import { Ng2PaginationModule } from 'ng2-pagination';
+import { Ng2OrderModule } from 'ng2-order-pipe';
+import { Ng2OrderPipe } from 'ng2-order-pipe/dist/src/ng2-order.pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { AddreclamationComponent } from './front/reclamationclient/addreclamation/addreclamation.component';
 import { AddUsersComponent } from './back/users/add-users/add-users.component';
 import { ListUsersComponent } from './back/users/list-users/list-users.component';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { Ng2OrderModule } from 'ng2-order-pipe';
-import { NgxPaginationModule } from 'ngx-pagination';
 import { AddorganisationComponent } from './front/organisation/addorganisation/addorganisation.component';
 import { OrganisationlistComponent } from './back/organisation/organisationlist/organisationlist.component';
 import { ListclientorgComponent } from './front/organisation/listclientorg/listclientorg.component';
-
 import { NgxStarRatingModule } from 'ngx-star-rating';
 
 import { ChartsModule } from 'ng2-charts';
+
 
 
 @NgModule({
@@ -49,20 +55,27 @@ import { ChartsModule } from 'ng2-charts';
     DashboardComponent,
     NavbaradminComponent,
     TestComponent,
-    AddUsersComponent,
+    ReclamationsComponent,
+    TypereclamationsComponent,
+    AddReclamationComponent,
+    AddtypeReclamationComponent,
+    AddreclamationComponent,
+     AddUsersComponent,
     ListUsersComponent,
     AddorganisationComponent,
     OrganisationlistComponent,
     ListclientorgComponent
+   
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,FormsModule,HttpClientModule, SocialLoginModule,Ng2SearchPipeModule,
-    Ng2OrderModule,ChartsModule,
-    NgxPaginationModule,NgxStarRatingModule
-  
+    AppRoutingModule,FormsModule,HttpClientModule, SocialLoginModule,Ng2SearchPipeModule,Ng2OrderModule,
+   NgxPaginationModule,ChartsModule,NgxStarRatingModule
+
    
   ],
+ 
   providers: [{provide: APP_BASE_HREF, useValue: ''},CookieService,
   SocialAuthService,
     {

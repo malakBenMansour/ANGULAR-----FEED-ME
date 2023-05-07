@@ -78,3 +78,4 @@ export class UserService {
     return this.httpClient.post(`${this.API_URL}/add/${donationId}/${associationId}`, {});
   }
 }
+

@@ -1,0 +1,78 @@
+<body>
+  <div class="row">
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_settings-panel.html -->
+      <!-- partial -->
+      <!-- partial:partials/_sidebar.html -->
+      <app-navbaradmin></app-navbaradmin>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="main-content">
+              <div class="container-fluid">
+                <div class="row">
+                
+                  <div class="col-md-4" *ngFor="let row of lstRec">
+                    <div class="row">
+                    <div class="card animated zoomIn">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">{{row.nomRec}}</h5>
+                        <p class="card-text">{{row.description}}</p>
+                        <p class="card-text">{{row.priority}}</p>
+                        <p class="card-text">{{row.numTel}}</p>
+                        <p class="card-text">{{row.status}}</p>
+                        <p class="card-text">{{row.dateCreation}}</p>
+                        <p class="card-text">{{row.typeRec}}</p>
+                        <button type="button" class="btn btn-primary" (click)="deleteReclamation(row.idRec)">Supprimer</button>
+                        <button class="btn btn-success" (click)="activer(row)"> Traiter </button>
+                      </div>
+                    </div>
+                  </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <form (submit)="sendSms()">
+            <label for="phoneNumber">Phone number:</label>
+            <input type="text" id="phoneNumber" [(ngModel)]="smsRequest.phoneNumber">
+            <label for="message">Message:</label>
+            <textarea id="message" [(ngModel)]="smsRequest.message"></textarea>
+            <button type="submit">Send SMS</button>
+          </form>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+        <footer class="footer">
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-center text-sm-left d-block d-sm-inline-block">Copyright
+              © <a href="https://www.bootstrapdash.com/" target="_blank">bootstrapdash.com</a> 2020</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Free <a href="https://www.bootstrapdash.com/"
+                target="_blank">Bootstrap dashboard </a>templates from Bootstrapdash.com</span>
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- base:js -->
+  <script src="/../assets/back/vendors/js/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="/../assets/back/js/off-canvas.js"></script>
+  <script src="/../assets/back/js/hoverable-collapse.js"></script>
+  <script src="/../assets/back/js/template.js"></script>
+  <script src="/../assets/back/js/settings.js"></script>
+  <script src="/../assets/back/js/todolist.js"></script>
+  <!-- endinject -->
+  <!-- plugin js for this page -->
+  <script src="/../assets/back/vendors/progressbar.js/progressbar.min.js"></script>

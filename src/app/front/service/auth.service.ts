@@ -40,3 +40,4 @@ confirmUserAccount(token: string) {
 }
 
 }
+

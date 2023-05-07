@@ -15,6 +15,7 @@
   <!-- endi"images/favicnject -->
   
 </head>
+
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
       <li class="nav-item">
@@ -89,6 +90,7 @@
         </div>
       </li>
 
+
 <!---Users-->
 <li class="nav-item">
   <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
@@ -122,6 +124,7 @@
 <!----enduser-->
 
 
+
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
           <i class="typcn typcn-th-small-outline menu-icon"></i>
@@ -133,9 +136,96 @@
             <li class="nav-item"> <a class="nav-link" routerLink="/test">Basic table</a></li>
           </ul>
         </div>
+
+        <div class="collapse" id="tables">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" routerLink="/reclamation">reclamation</a></li>
+          </ul>
+        </div>
+        <div class="collapse" id="tables">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" routerLink="/typereclamation"> type réclamation</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
+          <i class="typcn typcn-compass menu-icon"></i>
+          <span class="menu-title">Icons</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="icons">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Mdi icons</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+          <i class="typcn typcn-user-add-outline menu-icon"></i>
+          <span class="menu-title">User Pages</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="auth">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
+            <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
+          <i class="typcn typcn-globe-outline menu-icon"></i>
+          <span class="menu-title">Error pages</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="error">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
+            <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="pages/documentation/documentation.html">
+          <i class="typcn typcn-document-text menu-icon"></i>
+          <span class="menu-title">Documentation</span>
+        </a>
+      </li>
+    </ul>
+    <ul class="sidebar-legend">
+      <li>
+        <p class="sidebar-menu-title">Category</p>
+      </li>
+      <li class="nav-item"><a href="#" class="nav-link">#Sales</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">#Marketing</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">#Growth</a></li>
+    </ul>
+  </nav>
+
+   <!-- base:js -->
+   <script src="/../assets/back/vendors/js/vendor.bundle.base.js"></script>
+   <!-- endinject -->
+   <!-- Plugin js for this page-->
+   <!-- End plugin js for this page-->
+   <!-- inject:js -->
+   <script src="/../assets/back/js/off-canvas.js"></script>
+   <script src="/../assets/back/js/hoverable-collapse.js"></script>
+   <script src="/../assets/back/js/template.js"></script>
+   <script src="/../assets/back/js/settings.js"></script>
+   <script src="/../assets/back/js/todolist.js"></script>
+   <!-- endinject -->
+   <!-- plugin js for this page -->
+   <script src="/../assets/back/vendors/progressbar.js/progressbar.min.js"></script>
+   <script src="/../assets/back/vendors/chart.js/Chart.min.js"></script>
+   <!-- End plugin js for this page -->
+   <!-- Custom js for this page-->
+   <script src="/../assets/back/js/dashboard.js"></script>
+
       </li>
       
       <button type="button" class="template-btn" (click)="logout()">Logout</button>
     </ul>
     
   </nav>
+

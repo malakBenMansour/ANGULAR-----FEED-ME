@@ -26,6 +26,7 @@ export class HeaderComponent implements OnInit {
   admin : any ;
   AGENT : any;
 CLIENT:any;
+
   constructor(private tokenStorageService: TokenStorageService, private router: Router) { }
 
   ngOnInit(): void {
@@ -35,6 +36,7 @@ CLIENT:any;
       const user = this.tokenStorageService.getUser();
       this.roles = user.roles;
       this.admin = this.user.roles.includes("ROLE_ADMIN");
+
       this.AGENT = this.user.roles.includes("AGENT");
       this.CLIENT=this.user.roles.includes("CLIENT");
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');

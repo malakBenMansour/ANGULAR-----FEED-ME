@@ -40,10 +40,10 @@ export class RegisterComponent implements OnInit {
   isLogin?: boolean;
 
  /* user_roles: any = [
-		{name:'AGENT', value:'AGENT', selected: false},
-		{name:'admin', value:'ROLE_ADMIN', selected: false},
-		{name:'CLIENT', value:'CLIENT', selected: false},
-	]
+    {name:'AGENT', value:'AGENT', selected: false},
+    {name:'admin', value:'ROLE_ADMIN', selected: false},
+    {name:'CLIENT', value:'CLIENT', selected: false},
+  ]
 */
 user_roles: any = [
   { name:'AGENT', value:'agent', selected: false },
@@ -56,8 +56,8 @@ user_roles: any = [
   ngOnInit(): void {
   }
   onChangeCategory(event: any, role: any) {
-		this.selectedRoles.push(role.value);
-	}
+    this.selectedRoles.push(role.value);
+  }
 
  
 
@@ -118,3 +118,4 @@ user_roles: any = [
   
 
 }
+

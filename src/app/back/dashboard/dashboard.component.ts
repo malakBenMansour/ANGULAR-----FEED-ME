@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { TokenStorageService } from 'src/app/front/service/token-storage.service';
 import * as Chart from 'chart.js';
-
 import { ITypePercentage, ITypePercentage1 } from 'src/app/front/entity/stat';
 import { TokenStorageService } from 'src/app/front/service/token-storage.service';
 import { UserService } from 'src/app/front/service/user.service';
 import { ChartOptions, ChartType } from 'chart.js';
 import { Color, Label, SingleDataSet } from 'ng2-charts';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -15,8 +17,9 @@ import { Color, Label, SingleDataSet } from 'ng2-charts';
 export class DashboardComponent implements OnInit {
 
  
-  
+  isLoggedIn = false;
 
+ 
   constructor(private userService: UserService) { }
 
   
@@ -73,20 +76,7 @@ public typeData: Array<ITypePercentage> = [];
    
     
     
-    // this.userService.getTypePercentage().subscribe(
-    //   (d) => {
-    //     // console.log(d);
-    //     d.forEach((typeCount: ITypePercentage) => {
-    //       console.log(typeCount.count);
-    //       console.log(typeCount.stateuser);
-    //       this.doughnutChartData.push(typeCount.count);
-    //       this.doughnutChartLabels.push(typeCount.stateuser);
-    //     });
-    //   },
-    //   (error: any) => {
-    //     console.error(error);
-    //   }
-    // );
+
 
     this.barChartData = [];
     this.barChartLabels = [];
