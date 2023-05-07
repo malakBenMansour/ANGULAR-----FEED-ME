@@ -1,0 +1,290 @@
+<h3 class="card-header">Ajouter nouvelle boite </h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form  novalidate (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm">
+   
+
+    <div class="form-group">
+        <label for="name"> Nom</label>
+       
+        <input
+        type="text"
+        class="form-control"
+        placeholder="Tapez votre Nom"
+        [(ngModel)]="user.name"
+        name="name"
+        #name="ngModel"
+        id="name"
+        required
+        minlength="4"
+    
+        [ngClass]="{
+          'is-invalid': name.touched && !name.valid
+        }"
+      />
+     
+  
+      <div *ngIf="name.invalid && (name.dirty || name.touched)"
+      class="alert">
+  
+    <div *ngIf="name.errors?.['required']">
+     Nom est obligatoire
+    </div>
+    <div *ngIf="name.errors?.['minlength']">
+      Obligatoire 4 caractères 
+    </div>
+    </div>
+  
+  
+         </div>
+
+
+
+<!-----------------Prenom-------->
+<div class="form-group">
+    <label for="prenom"> prenom</label>
+   
+    <input
+    type="text"
+    class="form-control"
+    placeholder="Tapez votre prenom"
+    [(ngModel)]="user.prenom"
+    prenom="prenom"
+    #prenom="ngModel"
+    id="prenom"
+    required
+    minlength="4"
+  
+    [ngClass]="{
+      'is-invalid': prenom.touched && !prenom.valid
+    }"
+  />
+ 
+
+  <div *ngIf="prenom.invalid && (prenom.dirty || prenom.touched)"
+  class="alert">
+
+<div *ngIf="prenom.errors?.['required']">
+ Nom est obligatoire
+</div>
+<div *ngIf="prenom.errors?.['minlength']">
+  Obligatoire 4 caractères 
+</div>
+</div>
+
+
+     </div>
+
+
+<!-------------Username-->
+<div class="form-group">
+    <label for="username"> username</label>
+   
+    <input
+    type="text"
+    class="form-control"
+    placeholder="Tapez votre username"
+    [(ngModel)]="user.username"
+    username="username"
+    #username="ngModel"
+    id="username"
+    required
+    minlength="4"
+  
+    [ngClass]="{
+      'is-invalid': username.touched && !username.valid
+    }"
+  />
+ 
+
+  <div *ngIf="username.invalid && (username.dirty || username.touched)"
+  class="alert">
+
+<div *ngIf="username.errors?.['required']">
+ Nom est obligatoire
+</div>
+<div *ngIf="username.errors?.['minlength']">
+  Obligatoire 4 caractères 
+</div>
+</div>
+
+
+     </div>
+
+
+
+
+
+<!----------Adresse-->
+
+<div class="form-group">
+    <label for="address"> address</label>
+   
+    <input
+    type="text"
+    class="form-control"
+    placeholder="Tapez votre address"
+    [(ngModel)]="user.address"
+    address="address"
+    #address="ngModel"
+    id="address"
+    required
+    minlength="4"
+  
+    [ngClass]="{
+      'is-invalid': address.touched && !address.valid
+    }"
+  />
+ 
+
+  <div *ngIf="address.invalid && (address.dirty || address.touched)"
+  class="alert">
+
+<div *ngIf="address.errors?.['required']">
+ Nom est obligatoire
+</div>
+<div *ngIf="address.errors?.['minlength']">
+  Obligatoire 4 caractères 
+</div>
+</div>
+
+
+     </div>
+
+
+
+
+<!-------Email--------->
+
+
+
+
+<div class="form-group">
+    <label for="email"> Email</label>
+   
+    <input
+    type="email"
+    class="form-control"
+    placeholder="Tapez votre email"
+    [(ngModel)]="user.email"
+    email="email"
+    #email="ngModel"
+    id="email"
+    required
+    minlength="4"
+  
+    [ngClass]="{
+      'is-invalid': email.touched && !email.valid
+    }"
+  />
+ 
+
+  <div *ngIf="email.invalid && (email.dirty || email.touched)"
+  class="alert">
+
+<div *ngIf="email.errors?.['required']">
+    Nom est obligatoire
+</div>
+<div *ngIf="email.errors?.['minlength']">
+  Obligatoire 4 caractères 
+</div>
+</div>
+
+
+     </div>
+
+
+
+
+<!-----Date naissance--------->
+
+
+<div class="form-group">
+    <label for="exampleFormControlInput1" class="form-label">date Naissance </label>
+    <input type="date" class="form-control" id="datenaissance" required [(ngModel)]="user.datenaissance" name="datenaissance">
+</div>
+
+
+
+    
+
+<!------Tel-->
+<div class="form-group">
+    <label for="formGroupExampleInput" class="form-label">Telephone </label>
+
+    <input  class="form-control" type="text" name="tel" id="tel" [(ngModel)]="user.tel"
+    required
+    placeholder="Tapez votre Telephone"
+    minlength="8"
+    #telVar="ngModel"
+    #tel="ngModel"
+    pattern="^+[0-9]{8,12}$"
+    [ngClass]="{
+      'is-invalid': telVar.touched && !telVar.valid
+    }"
+   
+   >
+   <div *ngIf="tel.invalid && (tel.dirty || tel.touched)"
+   class="alert">
+
+ <div *ngIf="tel.errors?.['required']">
+  Telephone est obligatoire
+ </div>
+ <div *ngIf="tel.errors?.['pattern']">
+   Vérifiez votre Telephone
+ </div>
+</div>
+
+</div>
+
+<!-----Password-->
+
+<div class="form-group">
+    <label for="password"> Password</label>
+   
+    <input
+    type="password"
+    class="form-control"
+    placeholder="Tapez votre password"
+    [(ngModel)]="user.password"
+    password="password"
+    #password="ngModel"
+    id="password"
+    required
+   
+  
+    [ngClass]="{
+      'is-invalid': password.touched && !password.valid
+    }"
+  />
+ 
+
+  <div *ngIf="password.invalid && (password.dirty || password.touched)"
+  class="alert">
+
+<div *ngIf="password.errors?.['required']">
+    password est obligatoire
+</div>
+
+</div>
+
+
+     </div>
+
+
+
+
+
+
+
+
+
+    <button id="basic" type="button" mat-button type="submit" class="btn btn-success"  [disabled]="!registerForm.valid">Enregistrer</button>
+  
+  
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>Enregistré avec succés !</h4>
+  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+</div>

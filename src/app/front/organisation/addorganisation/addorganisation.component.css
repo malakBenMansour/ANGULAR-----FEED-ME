@@ -1,0 +1,15 @@
+.section-top {
+   /* width: 80%; /* adjust this value as needed */
+    margin: 1000 auto;
+  }
+
+
+.section-top h3 {
+    text-align: center;
+    margin-top: 40px;
+  }
+  h3 {
+    text-align: center;
+  }
+  
+ 
