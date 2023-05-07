@@ -1,0 +1,67 @@
+<body>
+  <div class="container-fluid page-body-wrapper">
+    <app-navbaradmin></app-navbaradmin>
+    <div class="main-panel">
+      <div class="content-wrapper">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card animated zoomIn">
+
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title">Liste des types de réclamation</h4>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let row of lstTypeRec">
+                    <div class="card card-type-rec">
+                      <div class="card-header">
+                        <h5 class="card-title">{{row.nom}}</h5>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">{{row.description}}</p>
+                        <p class="card-text"><small class="text-muted">Créé le {{row.dateCreation}}</small></p>
+                      </div>
+                      <div class="card-footer">
+                        <button type="button" class="btn btn-primary" (click)="deleteTypeReclamation(row.idType)">
+                          <i class="material-icons"></i> Supprimer
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+          <span class="text-center text-sm-left d-block d-sm-inline-block">© 2023 All Rights Reserved</span>
+          <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Free <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap dashboard</a> templates from Bootstrapdash.com</span>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- base:js -->
+  <script src="/../assets/back/vendors/js/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="/../assets/back/js/off-canvas.js"></script>
+  <script src="/../assets/back/js/hoverable-collapse.js"></script>
+  <script src="/../assets/back/js/template.js"></script>
+  <script src="/../assets/back/js/settings.js"></script>
+  <script src="/../assets/back/js/todolist.js"></script>
+  <!-- endinject -->
+  <!-- plugin js for this page -->
+  <script src="/../assets/back/vendors/progressbar.js/progressbar.min.js"></script>
+  <script src="/../assets/back/vendors/chart.js/Chart.min.js"></script>
+  <!-- End plugin js for this page -->
+  <!-- Custom js for this page-->
+  <script src="/../assets/back/js/dashboard.js"></script>
+  <!-- End custom js for this page-->
+</body>

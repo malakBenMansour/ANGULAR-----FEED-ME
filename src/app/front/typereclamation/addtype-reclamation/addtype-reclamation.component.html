@@ -1,0 +1,139 @@
+<!-- Banner Area Starts -->
+<section class="banner-area banner-area2 blog-page text-center">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-12">
+              <h1><i>Welcome to Our App</i></h1>
+              <h2><a href="home">Home </a> &nbsp;/&nbsp; </h2>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- Banner Area End -->
+<section class="food-area section-padding">
+    
+  <div class="section-top2 text-center">
+    <h3>Claims  <span> Types </span> Management</h3>
+    <p><i>Put Your Email and Finish the process</i></p>
+</div>
+
+  <div class="container">
+      <div>
+         
+          <div class="input-group">
+            <input class="form-control border-0 bg-light" type="text" name="nom" [(ngModel)]="nom" (ngModelChange)="Search()" placeholder="Taper le Type Reclamation">
+            <div class="input-group-append">
+              <span class="input-group-text bg-transparent border-0"><i class="fa fa-search"></i></span>
+            </div>
+          </div>
+          
+          <style>
+            .input-group {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+              padding: 5px;
+            }
+            .form-control {
+              border: none;
+              border-radius: 0;
+              box-shadow: none;
+            }
+            .input-group-append {
+              padding-left: 5px;
+            }
+            .input-group-text {
+              background-color: transparent;
+              border: none;
+              padding: 0;
+              color: #aaa;
+            }
+            .fa-search {
+              font-size: 20px;
+            }
+          </style>
+                    <div class="panel-body">
+              <div class="content row">
+                  <div class="col-md-4 mb-3" *ngFor="let typeReclamation of typereclamation | orderBy: key: reverse | paginate: {itemsPerPage:3,currentPage:p} ;">
+                    <div class="row">
+                        <div class="card animated slideInUp">
+                    <div class="card">
+                          <div class="card-header">
+                              <h5 class="card-title">{{ typeReclamation.nom }}</h5>
+                          </div>
+                          <div class="card-body">
+                              <p class="card-text">{{ typeReclamation.description }}</p>
+                              <p class="card-text">{{ typeReclamation.dateCreation }}</p>
+                          </div>
+                          <div class="card-footer">
+                              <button type="button" class="genric-btn success" (click)="onUpdateTypeRec(typeReclamation)">Modifier</button>
+                              <button type="button" class="genric-btn danger" matTooltip="Delete type" color="warn" (click)="deleteTypeRec(this.typeReclamation.idType)">Supprimer</button>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+           
+                </div>
+                
+              </div>
+              <pagination-controls (pageChange)=" p = $event"></pagination-controls> 
+              <div class="row">
+                  <div class="col-md-12">
+                      <button type="button" class="template-btn" (click)="downloadExcel()">Export</button> 
+                      
+                      <button type="button" class="template-btn" (click)="showAddForm=true">Add New Type</button> 
+                      
+                      <div *ngIf="showUpdateForm" class="panel-body">
+                          <!-- <form (ngSubmit)="updateTypeRec(selectedTypeRec)" #updateForm="ngForm">
+                              <h4>Modifier la reclamation</h4> -->
+                              <div *ngIf="showUpdateForm" class="panel-body">
+                                <form (ngSubmit)="updateTypeRec(selectedTypeRec)" #updateForm="ngForm">
+                                    <h4>update  claim</h4>
+                                    <div class="form-group">
+                                        <label for="titre">ID</label>
+                                        <input type="number" class="form-control" name="ID" [(ngModel)]="selectedTypeRec.idType" disabled>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="titre">name</label>
+                                        <input type="text" class="form-control" name="nom" [(ngModel)]="selectedTypeRec.nom" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="description">description</label>
+                                        <textarea name="description" class="form-control" [(ngModel)]="selectedTypeRec.description" required></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="dateCreation">dateCreation</label>
+                                        <input type="date" class="form-control" name="dateCreation" [(ngModel)]="selectedTypeRec.dateCreation" required>
+                                    </div>
+                                    <button type="submit" class="template-btn" [disabled]="!updateForm.form.valid">save</button>
+                                    <button type="button" class="template-btn btn-default" (click)="showUpdateForm=false;selectedTypeRec=null">Cancel
+                                    </button>
+                                </form>
+                                
+                            </div>
+                            
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</section>
+<section>
+    <div *ngIf="showAddForm">
+        <form action="#"  (ngSubmit)="onSubmit()">
+            <fieldset>
+                <legend><h3>Add New Claim</h3></legend>
+                    <input rows="5" cols="50" type="text" name="nom" placeholder="nom" [(ngModel)]="nom"/>
+                    <input type="text" name="description" placeholder="description" [(ngModel)]="description"/>
+                    <input type="date" name="dateCreation" placeholder="dateCreation" [(ngModel)]="dateCreation"/>
+            <input type="submit"  value="Submit">
+            </fieldset>
+        </form>
+      </div>
+</section>
+                       
+    
