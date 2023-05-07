@@ -86,8 +86,8 @@ export class LoginComponent implements OnInit {
           res => {
             console.log(res);
             
-            this.tokenStorage.saveUser(data);
-            this.currentUser = data;
+            this.tokenStorage.saveUser(res);
+            this.currentUser = res;
            
           }
         );
@@ -104,8 +104,8 @@ export class LoginComponent implements OnInit {
         this.social.loginWithGoogle(data.idToken).subscribe(
           res =>{
             console.log(res);
-            this.tokenStorage.saveUser(data);
-            this.currentUser=data;
+            this.tokenStorage.saveUser(res);
+            this.currentUser=res;
           }
         );
       

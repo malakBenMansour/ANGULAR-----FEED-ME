@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,7 +29,14 @@ import { Ng2OrderModule } from 'ng2-order-pipe';
 import { Ng2OrderPipe } from 'ng2-order-pipe/dist/src/ng2-order.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AddreclamationComponent } from './front/reclamationclient/addreclamation/addreclamation.component';
+import { AddUsersComponent } from './back/users/add-users/add-users.component';
+import { ListUsersComponent } from './back/users/list-users/list-users.component';
+import { AddorganisationComponent } from './front/organisation/addorganisation/addorganisation.component';
+import { OrganisationlistComponent } from './back/organisation/organisationlist/organisationlist.component';
+import { ListclientorgComponent } from './front/organisation/listclientorg/listclientorg.component';
+import { NgxStarRatingModule } from 'ngx-star-rating';
 
+import { ChartsModule } from 'ng2-charts';
 
 
 
@@ -54,14 +60,22 @@ import { AddreclamationComponent } from './front/reclamationclient/addreclamatio
     AddReclamationComponent,
     AddtypeReclamationComponent,
     AddreclamationComponent,
+     AddUsersComponent,
+    ListUsersComponent,
+    AddorganisationComponent,
+    OrganisationlistComponent,
+    ListclientorgComponent
    
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,FormsModule,HttpClientModule, SocialLoginModule,Ng2SearchPipeModule,Ng2OrderModule,
-   NgxPaginationModule
+   NgxPaginationModule,ChartsModule,NgxStarRatingModule
+
+   
   ],
+ 
   providers: [{provide: APP_BASE_HREF, useValue: ''},CookieService,
   SocialAuthService,
     {

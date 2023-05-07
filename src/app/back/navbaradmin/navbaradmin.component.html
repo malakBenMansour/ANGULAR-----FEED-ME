@@ -1,3 +1,4 @@
+
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -14,8 +15,6 @@
   <!-- endi"images/favicnject -->
   
 </head>
-
-
 
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
@@ -90,6 +89,42 @@
           </ul>
         </div>
       </li>
+
+
+<!---Users-->
+<li class="nav-item">
+  <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+    <i class="typcn typcn-chart-pie-outline menu-icon"></i>
+    <span class="menu-title">Users</span>
+    <i class="menu-arrow"></i>
+  </a>
+  <div class="collapse" id="charts">
+  
+    <ul class="nav flex-column sub-menu">
+      <li class="nav-item"> <a class="nav-link" routerLink="/listuser">ListUsers</a></li>
+    </ul>
+  </div>
+</li>
+<!----enduser-->
+
+<!---Users-->
+<li class="nav-item">
+  <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+    <i class="typcn typcn-chart-pie-outline menu-icon"></i>
+    <span class="menu-title">Organisations</span>
+    <i class="menu-arrow"></i>
+  </a>
+  <div class="collapse" id="charts">
+    
+    <ul class="nav flex-column sub-menu">
+      <li class="nav-item"> <a class="nav-link" routerLink="/organisationadmin">ListOrganisation</a></li>
+    </ul>
+  </div>
+</li>
+<!----enduser-->
+
+
+
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
           <i class="typcn typcn-th-small-outline menu-icon"></i>
@@ -101,6 +136,7 @@
             <li class="nav-item"> <a class="nav-link" routerLink="/test">Basic table</a></li>
           </ul>
         </div>
+
         <div class="collapse" id="tables">
           <ul class="nav flex-column sub-menu">
             <li class="nav-item"> <a class="nav-link" routerLink="/reclamation">reclamation</a></li>
@@ -185,4 +221,11 @@
    <!-- End plugin js for this page -->
    <!-- Custom js for this page-->
    <script src="/../assets/back/js/dashboard.js"></script>
-  
+
+      </li>
+      
+      <button type="button" class="template-btn" (click)="logout()">Logout</button>
+    </ul>
+    
+  </nav>
+

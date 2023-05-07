@@ -20,6 +20,7 @@
   
  
       <body>
+
         <div class="row" id="proBanner">
           <div class="col-12">
             <span class="d-flex align-items-center purchase-popup">
@@ -29,6 +30,7 @@
             </span>
           </div>
         </div>
+
         <div class="container-scroller">
           <!-- partial:partials/_navbar.html -->
         
@@ -67,32 +69,51 @@
             <div class="main-panel">
               <div class="content-wrapper">
                 <div class="row">
-                  <div class="col-sm-6">
-                    <h3 class="mb-0 font-weight-bold">Kenneth Osborne</h3>
-                    <p>Your last login: 21h ago from newzealand.</p>
-                  </div>
-                  <div class="col-sm-6">
-                    <div class="d-flex align-items-center justify-content-md-end">
-                      <div class="mb-3 mb-xl-0 pr-1">
-                          <div class="dropdown">
-                            <button class="btn bg-white btn-sm dropdown-toggle btn-icon-text border mr-2" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="typcn typcn-calendar-outline mr-2"></i>Last 7 days
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuSizeButton3" data-x-placement="top-start">
-                              <h6 class="dropdown-header">Last 14 days</h6>
-                              <a class="dropdown-item" href="#">Last 21 days</a>
-                              <a class="dropdown-item" href="#">Last 28 days</a>
-                            </div>
+        
+                  
+
+                  <div class="home1">
+                    <div class="header1">
+                
+                      <div class="content">
+                        <div class="total-task-chart1">
+                            <h2 color="green">Nombre de users dans chaque ville </h2>
+                          <div >
+                            <canvas baseChart [data]="barChartData" [labels]="barChartLabels" [chartType]="barChartType"
+                              [options]="barChartOptions" [colors]="barChartColor"    [plugins]="barChartPlugins"
+                              [legend]="barChartLegend">
+                            </canvas>
+                
+                
                           </div>
-                      </div>
-                      <div class="pr-1 mb-3 mr-2 mb-xl-0">
-                        <button type="button" class="btn btn-sm bg-white btn-icon-text border"><i class="typcn typcn-arrow-forward-outline mr-2"></i>Export</button>
-                      </div>
-                      <div class="pr-1 mb-3 mb-xl-0">
-                        <button type="button" class="btn btn-sm bg-white btn-icon-text border"><i class="typcn typcn-info-large-outline mr-2"></i>info</button>
+                          
+                        </div>
+                
                       </div>
                     </div>
                   </div>
+
+                  <div class="home">
+                    <div class="header">
+                      
+                      <div class="content">
+                        <div class="card-body">
+                        <div class="total-task-chart">
+                            <h2>Nombre des users actives et innactives </h2>
+                          <div class="chart">
+                            <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType"
+                              [options]="doughnutChartOptions" [colors]="doughnutChartColor">
+                            </canvas>
+                          </div>
+                          
+                        </div>
+                       
+                         
+                        </div>
+                </div>
+                    </div>
+                  </div>
+
                 </div>
                 <div class="row  mt-3">
                   <div class="col-xl-5 d-flex grid-margin stretch-card">
@@ -316,6 +337,7 @@
                     </div>
                   </div>
                 </div>
+
                 <div class="row">
                   <div class="col-lg-12 d-flex grid-margin stretch-card">
                     <div class="card">
@@ -580,6 +602,7 @@
                     </div>
                   </div>
                 </div>
+
               </div>
               <!-- content-wrapper ends -->
               <!-- partial:partials/_footer.html -->

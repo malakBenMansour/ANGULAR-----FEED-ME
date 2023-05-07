@@ -1,5 +1,7 @@
  <!-- Header Area Starts -->
- <header class="header-area">
+
+ <header class="header-area" *ngIf="AGENT || CLIENT  ">
+
     <div class="container">
         <div class="row">
             <div class="col-lg-2">
@@ -7,13 +9,21 @@
                     <a href="index.html"><img src="assets/images/logo/logo.png" alt="logo"></a>
                 </div>
             </div>
-            <div class="col-lg-15">
+
+
+
+
+            <div class="col-lg-20">
+
                 <div class="custom-navbar">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>  
-                <div class="main-menu">
+
+            
+                <div class="main-menu" >
+
                     <ul>
                         <li class="active"><a href="index.html">home</a></li>
                        <!---- <li class="active"><a routerLink="addorg" routerLinkActive="active-link" *ngIf="agent">Organisation</a></li>
@@ -42,12 +52,23 @@
                        
                         <li><a href="#">Reclamations</a>
                             <ul class="sub-menu">
+
                                 <li><a routerLink="/typerec">typeReclamation Agent </a></li>
                                 <li><a  routerLink="/addreclamation">Reclamations Clients </a></li>
                             
                                 <li><a  routerLink="/recagent">Reclamations AGENT</a></li>
                             
                             
+
+                                <li><a href="blog-home.html">Reclamations </a></li>
+                                <li><a href="blog-details.html" routerLink="nour">Reclamations Types</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Organisations</a>
+                            <ul class="sub-menu">
+                                <li><a routerLink="/addorganisation"  routerLinkActive="active" *ngIf="AGENT">Add Your Organization </a></li>
+                                <li><a href="blog-details.html" routerLink="client" *ngIf="CLIENT">ORGANISATION</a></li>
+
                             </ul>
                         </li>
                   

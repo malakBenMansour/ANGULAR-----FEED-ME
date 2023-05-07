@@ -20,17 +20,24 @@ export class AuthService {
     }, httpOptions);
   }
 
-  register(username: string, email: string, password: string,name: string,prenom: string,address: string,tel:string,role:string[],organisationId: number): Observable<any> {
+  register(username: string, email: string, password: string,name: string,prenom: string,address: string,tel:string,role:string[],datenaissance: any): Observable<any> {
     return this.http.post<any>(apiServerUrl + 'signup', {
       username,
       email,
       password,
       name,prenom,address,tel,
-      role,organisationId
+      role,datenaissance
     }, httpOptions);
   }
  public addUser(user :User):Observable<any>{
     return this.http.post<any>("http://localhost:8090/api-auth/signup",user, httpOptions)
   
   }
+// service :
+confirmUserAccount(token: string) {
+  const url = `${apiServerUrl}/confirm-account?token=${token}`;
+  return this.http.get<any>(url);
 }
+
+}
+

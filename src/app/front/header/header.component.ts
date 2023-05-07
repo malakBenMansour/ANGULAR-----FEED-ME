@@ -20,10 +20,12 @@ export class HeaderComponent implements OnInit {
   isLoggedIn = false;
   showAdminBoard = false;
   showAgentBoard = false;
+  showClientBoard=false;
   username?: string;
   user =  this.tokenStorageService.getUser();
   admin : any ;
-  agent : any;
+  AGENT : any;
+CLIENT:any;
 
   constructor(private tokenStorageService: TokenStorageService, private router: Router) { }
 
@@ -34,9 +36,12 @@ export class HeaderComponent implements OnInit {
       const user = this.tokenStorageService.getUser();
       this.roles = user.roles;
       this.admin = this.user.roles.includes("ROLE_ADMIN");
-      this.agent = this.user.roles.includes("agent");
+
+      this.AGENT = this.user.roles.includes("AGENT");
+      this.CLIENT=this.user.roles.includes("CLIENT");
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
-      this.showAgentBoard = this.roles.includes('agent');
+      this.showAgentBoard = this.roles.includes('AGENT');
+      this.showClientBoard=this.roles.includes('CLIENT');
 
       this.username = user.username;
     }

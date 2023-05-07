@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../entity/user';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../service/auth.service';
+import { TokenStorageService } from '../service/token-storage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -38,10 +40,10 @@ export class RegisterComponent implements OnInit {
   isLogin?: boolean;
 
  /* user_roles: any = [
-		{name:'AGENT', value:'AGENT', selected: false},
-		{name:'admin', value:'ROLE_ADMIN', selected: false},
-		{name:'CLIENT', value:'CLIENT', selected: false},
-	]
+    {name:'AGENT', value:'AGENT', selected: false},
+    {name:'admin', value:'ROLE_ADMIN', selected: false},
+    {name:'CLIENT', value:'CLIENT', selected: false},
+  ]
 */
 user_roles: any = [
   { name:'AGENT', value:'agent', selected: false },
@@ -49,13 +51,17 @@ user_roles: any = [
   { name:'CLIENT', value:'client', selected: false },
 ]
 
-  constructor(private authService: AuthService,private http: HttpClient) { }
+  constructor(private router: Router,private authService: AuthService,private http: HttpClient,private tokenStorage: TokenStorageService) { }
 
   ngOnInit(): void {
   }
   onChangeCategory(event: any, role: any) {
-		this.selectedRoles.push(role.value);
-	}
+    this.selectedRoles.push(role.value);
+  }
+
+ 
+
+
 
   /*onSubmit(): void {
     const { username, email, password, address, tel, name, prenom, selectedRoles } = this.form;
@@ -74,14 +80,29 @@ user_roles: any = [
   }*/
 
   onSubmit(): void {
-    const { username, email, password, address, tel, name, prenom ,organisationId} = this.form;
+    const { username, email, password, address, tel, name, prenom ,datenaissance} = this.form;
     const selectedRoles = this.selectedRoles;
     
-    this.authService.register(username, email, password, name, prenom, address, tel, selectedRoles,organisationId).subscribe({
+    this.authService.register(username, email, password, name, prenom, address, tel, selectedRoles,datenaissance).subscribe({
       next: data => {
         console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
+        this.tokenStorage.saveToken(data);
+        this.tokenStorage.saveUser(data);
+        
+
+        if(this.tokenStorage.getUser().roles=='ADMIN')
+        {
+          this.router.navigate(["/dashboard"]);
+        }
+        else
+        {
+          this.router.navigate(["/profile"]);
+          console.log(this.tokenStorage.getUser());
+        }
+        //this.reloadPage();
+      
       },
       error: err => {
         this.errorMessage = err.error.message;
@@ -97,3 +118,4 @@ user_roles: any = [
   
 
 }
+

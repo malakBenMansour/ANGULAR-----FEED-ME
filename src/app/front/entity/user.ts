@@ -13,6 +13,7 @@ export class User {
     stateuser:any;
     fileName!: string;
     datenaissance:any;
+image!:any
 
     constructor(){
    
