@@ -1,0 +1,205 @@
+<app-header></app-header>
+<!-- Banner Area End -->
+<!-- <section class="food-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="hoverable-collapse">
+                <div class="section-top">
+                    <h3><span class="style-change">Personnolize Your Organisation </span></h3>
+                
+                </div>
+            </div>
+        </div>
+       
+
+
+            <div class="row">
+              <div class="col-md-30 col-sm-25">
+                <div class="single-food mt-10 mt-sm-20 main-menu">
+                  <div class="food-img">
+                    <img src="assets/images/food2.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="food-content">
+            
+                    <div class="form-container">
+                      <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+                        <div class="form-group">
+                          <label for="nom">Nom:</label>
+                          <input type="text" name="nom" [(ngModel)]="org.nom" id="nom" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="description">Description:</label>
+                          <textarea name="description" [(ngModel)]="org.description" id="description" class="form-control" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                          <label for="typeorganisation">Type d'organisation:</label>
+                          <select name="typeorganisation" [(ngModel)]="org.typeorganisation" id="typeorganisation" class="form-control" required>
+                            <option *ngFor="let typeorganisation of typeorganisation" [value]="typeorganisation">{{ typeorganisation }}</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="adresse">Adresse:</label>
+                          <input type="text" name="adresse" [(ngModel)]="org.adresse" id="adresse" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="image">Image:</label>
+                          <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="image" name="image" (change)="onImageUpload($event)">
+                            <label class="custom-file-label" for="image">Choose file</label>
+                          </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enregistrer</button>
+                      </form>
+                    </div>
+            
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          
+
+
+            
+        </div>
+            </section>
+ -->
+
+          
+
+            <style>
+              .form-container {
+                margin-top: 20px;
+                padding: 10px;
+                background-color: #f5f5f5;
+                border-radius: 5px;
+              }
+            
+              .form-group {
+                margin-bottom: 10px;
+              }
+            
+              label {
+                font-weight: bold;
+              }
+            
+              textarea {
+                resize: vertical;
+              }
+            </style>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+            <section class="banner-area banner-area2 menu-bg text-center">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-lg-12">
+                          <h1><i>Welcome Back To Our App</i></h1>
+                          <h2>Personnolize your organisation to be part of our App </h2>
+                      </div>
+                  </div>
+              </div>
+            </section>
+            
+            
+            
+            <section class="login-section" >
+              <div class="food-area section-padding">
+              <div class="container py-5">
+                <div class="row justify-content-center align-items-center">
+                  
+                  <div class="col-lg-8 col-md-4">
+                    <div class="login-wrapper p-5 rounded shadow">
+                      <!-- <h3 class="mb-30 titre_color justify-content-center align-items-center ">Complete this Form</h3>
+                      -->
+                      <h3 class="mb-30 titre_color justify-content-center align-items-center text-center">Complete this Form </h3>
+            
+                      <div>
+                        <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+                          <div class="form-group">
+                            <label for="nom">Nom:</label>
+                            <input type="text" name="nom" [(ngModel)]="org.nom" id="nom" class="form-control" required>
+                          </div>
+                          <div class="form-group">
+                            <label for="description">Description:</label>
+                            <textarea name="description" [(ngModel)]="org.description" id="description" class="form-control" rows="3" required></textarea>
+                          </div>
+                          <div class="form-group">
+                            <label for="typeorganisation">Type d'organisation:</label>
+                            <select name="typeorganisation" [(ngModel)]="org.typeorganisation" id="typeorganisation" class="form-control" required>
+                              <option *ngFor="let typeorganisation of typeorganisation" [value]="typeorganisation">{{ typeorganisation }}</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label for="adresse">Adresse:</label>
+                            <input type="text" name="adresse" [(ngModel)]="org.adresse" id="adresse" class="form-control" required>
+                          </div>
+                          <div class="form-group">
+                            <label for="image">Image:</label>
+                            <div class="custom-file">
+                              <input type="file" class="custom-file-input" id="image" name="image" (change)="onImageUpload($event)">
+                              <label class="custom-file-label" for="image">Choose file</label>
+                            </div>
+                          </div>
+                          <button type="submit" class="template-btn btn-primary">Enregistrer</button>
+                        </form>
+                      </div>
+                      
+            
+                      
+                      
+            <style>
+              .enlarge-title {
+              font-size: 20px; /* Adjust the font size to your preference */
+            }
+            
+            .title_color {
+              color: #ff0000; /* Replace with your desired color */
+            }
+            .titre_color {
+              color: #454141; /* Replace with your desired color */
+            }
+            .text-center {
+              text-align: center;
+            }
+            
+            .justify-content-center {
+              justify-content: center;
+            }
+            
+            .align-items-center {
+              align-items: center;
+            }
+            </style>          
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </section>
+            
+
+
+
+
+

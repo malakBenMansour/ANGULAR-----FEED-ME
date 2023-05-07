@@ -1,0 +1,159 @@
+<body>
+    <div class="row" >
+     
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_settings-panel.html -->
+    
+        <!-- partial -->
+        <!-- partial:partials/_sidebar.html -->
+      <app-navbaradmin></app-navbaradmin>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <!-- <div class="row">
+                <div class="main-content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-40">
+                                <div class="alert alert-light" role="alert">
+                                    <button class="btn btn-info" (click)="exportSocietePdf()"  > Export PDF</button>
+                                  </div>
+                                <div class="card">
+                                    <input class ="form-control"type="text" name="name" [(ngModel)]="name" (ngModelChange)="Search()" placeholder="
+      Taper le nom User">
+
+
+    
+                                    <div class="content table-responsive table-full-width">
+                                          <table class="table table-hover table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" (click)="sort('name')"  > <strong>nom &nbsp;</strong></th>  
+                                                        <th scope="col"><strong>prenom</strong></th>
+                                                        <th scope="col"><strong>username</strong></th>
+                                                        <th scope="col"><strong>numTel</strong></th>
+                                                        <th scope="col"><strong>address</strong></th>
+                                                        <th scope="col"><strong>datenaissance</strong></th>
+                                                        <th scope="col"><strong>Statut</strong></th>
+                                                        <th scope="col"><strong>Actions</strong></th>
+                                                         
+                                                      </tr>
+                                                </thead>
+                                                <tbody>
+                       
+                                                    <tr *ngFor="let employee of employees | orderBy: key: reverse | paginate: {itemsPerPage:3,currentPage:p};">
+                                                        <td >{{employee.name}}</td>
+                                                        <td >{{employee.prenom}}</td>
+                                                        <td >{{employee.username}}</td>
+                                                        <td >{{employee.tel}}</td>
+                                                        <td >{{employee.address}}</td>
+                                                        <td >{{employee.datenaissance}}</td>
+                                                        <td >{{employee.stateuser}}</td>
+
+                                                        <td><button class="btn btn-primary" (click)="deleteEmployee(employee.id)"  >Delete</button>
+                                                            
+                                                            <td><button class="btn btn-success" (click)="activer(employee)"  >Ban User</button>
+                                                           
+                                         
+                
+                                                    </tr>
+                                                </tbody>
+                                                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                                          </table>
+                
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>            
+                
+
+
+
+
+
+            </div>
+             -->
+            
+
+             <div class="row">
+              <div class="main-content">
+                <div class="container-fluid">
+                  <div class="alert alert-light" role="alert">
+                    <button class="btn btn-info" (click)="exportSocietePdf()"  > Export PDF</button>
+                  </div>
+                <div class="card">
+                    <input class ="form-control"type="text" name="name" [(ngModel)]="name" (ngModelChange)="Search()" placeholder="
+Taper le nom User">
+</div>
+                  <div class="row">
+                    <div class="col-md-4" *ngFor="let employee of employees | orderBy: key: reverse | paginate: {itemsPerPage:3,currentPage:p};">
+                      <div class="card">
+                        <div class="card-body">
+                          <img style="width: 100%;height: 100%;object-fit: cover;border-radius: 7px;" src="{{ employee.image }}"
+                                                        class="img-fluid" alt="slider-listing">
+                          <h5 class="card-title" (click)="sort('name') "> &nbsp;{{employee.name}}</h5>
+                          <p class="card-text">{{employee.prenom}}</p>
+                          <p class="card-text">{{employee.username}}</p>
+                  
+                          <p class="card-text">{{employee.tel}}</p>
+                          <p class="card-text">{{employee.email}}</p>
+                          <p class="card-text">{{employee.datenaissance}}</p>
+                          <p class="card-text">{{employee.address}}</p>
+                          <p class="card-text">{{employee.stateuser}}</p>
+                          <button  class="template-btn" (click)="deleteEmployee(employee.id)"  >Supprimer</button>
+                          <button class="btn btn-success" (click)="activer(employee)"  >Ban User</button>
+                                                           
+                        </div>
+                       
+                      </div>
+                     
+                    </div>
+                  </div>
+                  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                </div>
+              </div>
+            </div>
+           
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <span class="text-center text-sm-left d-block d-sm-inline-block">Copyright © <a href="https://www.bootstrapdash.com/" target="_blank">bootstrapdash.com</a> 2020</span>
+              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Free <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap dashboard </a>templates from Bootstrapdash.com</span>
+            </div>
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- base:js -->
+    <script src="/../assets/back/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+    <script src="/../assets/back/js/off-canvas.js"></script>
+    <script src="/../assets/back/js/hoverable-collapse.js"></script>
+    <script src="/../assets/back/js/template.js"></script>
+    <script src="/../assets/back/js/settings.js"></script>
+    <script src="/../assets/back/js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- plugin js for this page -->
+    <script src="/../assets/back/vendors/progressbar.js/progressbar.min.js"></script>
+    <script src="/../assets/back/vendors/chart.js/Chart.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- Custom js for this page-->
+    <script src="/../assets/back/js/dashboard.js"></script>
+    <!-- End custom js for this page-->
+  </body>
+
+
+
